@@ -1,6 +1,15 @@
 EmTasks::Application.routes.draw do
+  authenticated :user do
+    root to: 'application#index', as: :user_home
+  end
+
   devise_for :users
-  root to: 'application#index'
+  as :user do
+    match 'sign_in' => "devise/sessions#new", as: :sign_in, via: [:get, :post]
+    unauthenticated do
+      root to: "devise/sessions#new", as: :guest_home
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
