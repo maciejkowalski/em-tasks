@@ -34,6 +34,8 @@ end
 
 gem 'ember-rails'
 
+gem 'puma'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
