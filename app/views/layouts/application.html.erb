@@ -29,25 +29,44 @@
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="">
-      <div class="container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
 
-        <div class='row'>
-          <div class='col-md-5 col-centered'>
+    <% if user_signed_in? %>
+      <div class="">
+        <div class="container">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <div class='row'>
             <%= yield %>
-          <div>
-        </div>
+          </div>
 
-        <hr>
+          <hr>
 
-        <footer>
-          <p>&copy; Company 2014</p>
-        </footer>
-      </div> <!-- /container -->
-    </div>
+          <footer>
+            <p>&copy; Company 2014</p>
+          </footer>
+        </div> <!-- /container -->
+      </div>
+    <% else %>
+      <div class="jumbotron">
+        <div class="container">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <div class='row'>
+            <div class='col-md-5 col-centered'>
+              <%= yield %>
+            <div>
+          </div>
+
+          <hr>
+
+          <footer>
+            <p>&copy; Company 2014</p>
+          </footer>
+        </div> <!-- /container -->
+      </div>
+    <% end %>
 
   </div>
 
