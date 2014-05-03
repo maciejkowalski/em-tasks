@@ -7,8 +7,8 @@ EmTasks.Router.map(function(){
 });
 
 EmTasks.ListsRoute = Ember.Route.extend({
-  setupController: function(controller) {
-    return controller.set("content", []);
+  model: function() {
+    return EmTasks.List.find();
   }
 });
 
