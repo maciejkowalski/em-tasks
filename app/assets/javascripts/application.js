@@ -24,5 +24,7 @@
 
 // for more details see: http://emberjs.com/guides/application/
 
-window.EmTasks = Ember.Application.create()
+window.EmTasks = Ember.Application.create({
+  rootElement: "#root-container"
+})
 
