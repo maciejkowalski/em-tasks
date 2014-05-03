@@ -1,9 +1,12 @@
-<div id="container">
-  <h1>em-tasks</h1>
-  <form>
-    {{view Ember.TextField valueBinding="newListName"}}
-    <input type='submit' value='Add'>
-  </form>
+<div>
+  <div class='col-md-6'>
+    <form class='form-inline'>
+      <div class='form-group'>
+        {{view Ember.TextField valueBinding="newListName" class='form-control input-lg' placeholder='Add new List'}}
+      </div>
+      <input type='submit' value='Add'>
+    </form>
+  </div>
 
   {{newListName}}
 
