@@ -1,4 +1,4 @@
-EmTasks.ApplicationController = Em.Controller.extend({
+EmTasks.ListsController = Em.Controller.extend({
   lists: [],
 
   addList: function() {
