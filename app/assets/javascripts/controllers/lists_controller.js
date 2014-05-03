@@ -1,8 +1,6 @@
-EmTasks.ListsController = Em.Controller.extend({
-  lists: [],
-
+EmTasks.ListsController = Em.ArrayController.extend({
   addList: function() {
-    this.lists.pushObject({
+    this.pushObject({
       name: this.get('newListName')
     });
     return this.set('newListName', '');
