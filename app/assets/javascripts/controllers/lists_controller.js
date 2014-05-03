@@ -1,6 +1,6 @@
 EmTasks.ListsController = Em.ArrayController.extend({
   addList: function() {
-    EmTasks.List.createRecord({
+    this.store.createRecord('list', {
       name: this.get('newListName')
     });
     return this.set('newListName', '');

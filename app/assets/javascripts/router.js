@@ -8,7 +8,7 @@ EmTasks.Router.map(function(){
 
 EmTasks.ListsRoute = Ember.Route.extend({
   model: function() {
-    return EmTasks.List.find();
+    return this.store.find('list');
   }
 });
 
