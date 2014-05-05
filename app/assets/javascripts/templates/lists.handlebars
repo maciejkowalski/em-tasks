@@ -23,7 +23,9 @@
             {{#if isEditing}}
               {{edit-input class="form-control" value=title focus-out="acceptChanges" insert-newline="acceptChanges"}}
             {{else}}
-              {{name}}
+              <div {{action 'editList' on='doubleClick'}}>
+                {{name}}
+              </div>
             {{/if}}
           </h3>
         </div>
