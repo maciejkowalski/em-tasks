@@ -10,5 +10,9 @@ EmTasks.ListsController = Em.ArrayController.extend({
     this.get('store').find('list', id).then( function(record) {
       record.destroyRecord();
     });
-  }
+  },
 });
+
+EmTasks.ListController = Em.ObjectController.extend({
+  isEditing: true
+})
