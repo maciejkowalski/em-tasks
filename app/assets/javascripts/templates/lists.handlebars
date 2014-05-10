@@ -30,6 +30,12 @@
           </h3>
         </div>
 
+        ------
+        {{#each task in this.tasks}}
+          {{task.name}}
+        {{/each }}
+        ------
+
         <div class='col-md-4 down13p'>
           <button class="btn btn-danger btn-small pull-right" {{action "destroyList" id}} type="button">
             <span class="glyphicon glyphicon-ban-circle"></span>
