@@ -1,5 +1,7 @@
 EmTasks::Application.routes.draw do
-  resources :lists
+  resources :lists do
+    resources :tasks
+  end
 
   authenticated :user do
     root to: 'application#index', as: :user_home
