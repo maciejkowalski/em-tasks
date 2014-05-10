@@ -7,9 +7,11 @@ EmTasks.ListsController = Em.ArrayController.extend({
   },
 
   destroyList: function(id) {
-    this.get('store').find('list', id).then( function(record) {
-      record.destroyRecord();
-    });
+    if (confirm("Are you sure?")) {
+      this.get('store').find('list', id).then( function(record) {
+        record.destroyRecord();
+      });
+    }
   },
 });
 
