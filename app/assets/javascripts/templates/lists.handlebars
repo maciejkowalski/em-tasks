@@ -21,7 +21,7 @@
         <div class='col-md-8'>
           <h3>
             {{#if isEditing}}
-              {{edit-input class="form-control" value=title focus-out="acceptChanges" insert-newline="acceptChanges"}}
+              {{edit-input class="form-control" value=name focus-out="acceptChanges" insert-newline="acceptChanges"}}
             {{else}}
               <div {{action 'editList' on='doubleClick'}}>
                 {{name}}

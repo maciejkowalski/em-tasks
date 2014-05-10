@@ -20,12 +20,14 @@ EmTasks.ListController = Em.ObjectController.extend({
     },
     acceptChanges: function () {
       this.set('isEditing', false);
+      var name = this.get('model.name');
 
-      if (Ember.isEmpty(this.get('model.name'))) {
+      if (Ember.isEmpty(name)) {
         this.send('removeList');
       } else {
-        console.log('get model', this.get('model'));
-        this.get('model').save();
+        var list = this.get('model')
+        list.set('name', name);
+        list.save()
       }
     },
     removeList: function () {
