@@ -18,10 +18,11 @@ EmTasks.ListsController = Em.ArrayController.extend({
 EmTasks.ListController = Em.ObjectController.extend({
   actions: {
     editList: function() {
-      this.set('isEditing', true);
+      this.set('isEditingList', true);
+      var model = this.get('model')
     },
     acceptChanges: function () {
-      this.set('isEditing', false);
+      this.set('isEditingList', false);
       var name = this.get('model.name');
 
       if (Ember.isEmpty(name)) {
@@ -37,5 +38,5 @@ EmTasks.ListController = Em.ObjectController.extend({
       list.destroyRecord();
     }
   },
-  isEditing: false
-})
+  isEditingList: false
+});
