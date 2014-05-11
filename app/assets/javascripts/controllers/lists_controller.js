@@ -19,7 +19,6 @@ EmTasks.ListController = Em.ObjectController.extend({
   actions: {
     editList: function() {
       this.set('isEditingList', true);
-      var model = this.get('model')
     },
     acceptChanges: function () {
       this.set('isEditingList', false);
