@@ -43,10 +43,17 @@
           <button type='submit' class='btn btn-default'>Add Task</button>
         </form>
 
-        {{#each task in this.tasks}}
+        {{#each task in this.tasks itemController='task'}}
           <div class="col-md-10">
-            {{task.name}}
             <div class='col-md-10 padding7p'>
+
+              {{#if task.isEditingTask}}
+                {{edit-input class="form-control" value=task.name focus-out="acceptChanges" insert-newline="acceptChanges"}}
+              {{else}}
+                <div {{action 'editTask' on='doubleClick'}}>
+                  {{task.name}}
+                </div>
+              {{/if}}
               <editablespan
                 model='task.name'
                 on-ready='updateTaskInList(task)'

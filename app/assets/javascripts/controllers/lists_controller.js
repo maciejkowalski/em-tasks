@@ -39,3 +39,15 @@ EmTasks.ListController = Em.ObjectController.extend({
   },
   isEditingList: false
 });
+
+EmTasks.TaskController = Em.ObjectController.extend({
+  actions: {
+    editTask: function() {
+      this.set('isEditingTask', true);
+    },
+    acceptChanges: function() {
+      this.set("isEditingTask", false);
+    }
+  },
+  isEditingTask: false
+});
