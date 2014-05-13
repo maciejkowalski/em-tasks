@@ -36,11 +36,11 @@
           </button>
         </div>
 
-        <form ng-submit='addTaskToList(newTask, list)' class='form-inline padding7p'>
+        <form class='form-inline padding7p'>
           <div class='form-group'>
-            <input type='text' ng-model="newTask.name" class='form-control' placeholder='Add new Task'>
+            {{view Ember.TextField valueBinding="newTaskName"}}
           </div>
-          <button type='submit' class='btn btn-default'>Add Task</button>
+          <button type='submit' class='btn btn-default' {{action 'addTask'}}>Add Task</button>
         </form>
 
         {{#each task in this.tasks itemController='task'}}
