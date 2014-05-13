@@ -47,7 +47,20 @@ EmTasks.TaskController = Em.ObjectController.extend({
     },
     acceptChanges: function() {
       this.set("isEditingTask", false);
+      var name = this.get('model.name');
+
+      if (Ember.isEmpty(name)) {
+        this.send('removeTask');
+      } else {
+        var task = this.get('task');
+        task.set('name', name);
+        task.save()
+      }
+    },
+    removeTask: function() {
+      var task = this.get('model');
+      task.destroyRecord();
     }
   },
-  isEditingTask: false
+  isEditingTask: false,
 });
