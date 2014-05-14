@@ -37,7 +37,18 @@ EmTasks.ListController = Em.ObjectController.extend({
       list.destroyRecord();
     }
   },
-  isEditingList: false
+  isEditingList: false,
+  addTask: function() {
+    var list = this.get('model');
+    console.log('list', list);
+
+    var task = this.store.createRecord('task', {
+      name: this.get('newTaskName'),
+      list: list
+    }).save();
+    console.log('created task', task);
+    return this.set('newTaskName', '');
+  }
 });
 
 EmTasks.TaskController = Em.ObjectController.extend({
