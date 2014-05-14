@@ -52,7 +52,12 @@ EmTasks.ListController = Em.ObjectController.extend({
     return this.set('newTaskName', '');
   },
 
-  removeTask: function() {
+  destroyTask: function(id) {
+    if (confirm("Are you sure?")) {
+      this.get('store').find('task', id).then( function(record) {
+        record.destroyRecord();
+      });
+    }
   },
 
   isEditingList: false,

@@ -57,7 +57,7 @@
             </div>
 
             <div class='col-md-2'>
-              <button class="btn btn-danger btn-xs pull-right" ng-click="deleteTaskFromList($index, task, list)" type="button">
+              <button class="btn btn-danger btn-xs pull-right" {{action 'destroyTask' task.id}} type="button">
                 <span class="glyphicon glyphicon-ban-circle"></span>
               </button>
             </div>
