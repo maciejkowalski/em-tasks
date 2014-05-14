@@ -20,6 +20,7 @@ EmTasks.ListController = Em.ObjectController.extend({
     editList: function() {
       this.set('isEditingList', true);
     },
+
     acceptChanges: function () {
       this.set('isEditingList', false);
       var name = this.get('model.name');
@@ -32,12 +33,13 @@ EmTasks.ListController = Em.ObjectController.extend({
         list.save()
       }
     },
+
     removeList: function () {
       var list = this.get('model');
       list.destroyRecord();
     }
   },
-  isEditingList: false,
+
   addTask: function() {
     var list = this.get('model');
     console.log('list', list);
@@ -48,7 +50,12 @@ EmTasks.ListController = Em.ObjectController.extend({
     }).save();
     console.log('created task', task);
     return this.set('newTaskName', '');
-  }
+  },
+
+  removeTask: function() {
+  },
+
+  isEditingList: false,
 });
 
 EmTasks.TaskController = Em.ObjectController.extend({
@@ -56,6 +63,7 @@ EmTasks.TaskController = Em.ObjectController.extend({
     editTask: function() {
       this.set('isEditingTask', true);
     },
+
     acceptChanges: function() {
       this.set("isEditingTask", false);
       var name = this.get('model.name');
@@ -68,10 +76,12 @@ EmTasks.TaskController = Em.ObjectController.extend({
         task.save()
       }
     },
+
     removeTask: function() {
       var task = this.get('model');
       task.destroyRecord();
     }
   },
+
   isEditingTask: false,
 });
