@@ -8,3 +8,5 @@ EmTasks.ListsView = Ember.View.extend({
     return false;
   }
 });
+
+
