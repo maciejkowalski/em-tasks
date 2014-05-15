@@ -21,13 +21,13 @@
           <div class='centre'>
             <a class="navbar-brand" href="/#/">em-tasks</a>
           </div>
-          <div>
-            <a class="navbar-brand" href="/#/">Tablica</a>
-          </div>
-          <div>
-            <a class="navbar-brand" href="#profile">Profil</a>
-          </div>
           <% if user_signed_in? %>
+            <div>
+              <a class="navbar-brand" href="/#/">Tablica</a>
+            </div>
+            <div>
+              <a class="navbar-brand" href="#profile">Profil</a>
+            </div>
             <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "navbar-brand") %>
           <% end %>
         </div>
