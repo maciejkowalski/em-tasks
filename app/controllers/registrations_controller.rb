@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  def user
+  def show
     render json: current_user
   end
 
@@ -23,6 +23,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-    params.require(:registration).permit(:first_name, :last_name, :email, :avatar, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :password, :password_confirmation)
   end
 end

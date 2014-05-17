@@ -8,7 +8,9 @@ EmTasks::Application.routes.draw do
 
   devise_for :users, controllers: {registrations: 'registrations'}
   as :user do
-    get 'users/user' => "registrations#user", as: :current_user
+    get 'users/:id' => "registrations#show", as: :current_user_show
+    put 'users/:id' => "registrations#update", as: :current_user_update
+    get 'users/show' => "registrations#show", as: :current_user
     match 'sign_in' => "devise/sessions#new", as: :sign_in, via: [:get, :post]
     unauthenticated do
       root to: "devise/sessions#new", as: :guest_home
