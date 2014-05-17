@@ -1,6 +1,6 @@
 // for more details see: http://emberjs.com/guides/models/defining-models/
 
-EmTasks.Task = DS.Model.extend({
+EmTasks.User = DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr("string"),
   password_confirmation: DS.attr("string"),
