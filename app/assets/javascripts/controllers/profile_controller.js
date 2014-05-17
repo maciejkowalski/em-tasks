@@ -10,5 +10,10 @@ EmTasks.ProfileController = Em.ObjectController.extend({
         _this.set('model', record);
       });
     });
+  },
+
+  updateProfile: function() {
+    var model = _this.get('model');
+    model.save();
   }
 });
