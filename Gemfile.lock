@@ -48,8 +48,8 @@ GEM
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.3)
-    ember-data-source (1.0.0.beta.7)
-      ember-source
+    ember-data-source (1.0.0.beta.19.2)
+      ember-source (~> 1.8)
     ember-rails (0.15.0)
       active_model_serializers
       barber (>= 0.4.1)
@@ -142,7 +142,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
-  ember-data-source
+  ember-data-source (~> 1.0.0.beta.19)
   ember-rails
   ember-source (= 1.12)
   jbuilder (~> 1.2)
