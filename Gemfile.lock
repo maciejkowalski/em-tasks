@@ -144,6 +144,7 @@ DEPENDENCIES
   ember-data-source (~> 1.0.0.beta.19)
   ember-rails
   ember-source (= 1.12.1)
+  handlebars-source
   jbuilder (~> 1.2)
   jquery-rails
   pg

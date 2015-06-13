@@ -34,6 +34,7 @@ end
 gem 'ember-rails'
 gem 'ember-source', '1.12.1'
 gem 'ember-data-source', '~> 1.0.0.beta.19'
+gem 'handlebars-source'
 
 gem 'puma'
 
