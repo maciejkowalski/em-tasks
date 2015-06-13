@@ -35,6 +35,7 @@ group :doc do
 end
 
 gem 'ember-rails'
+gem 'ember-source', '1.12'
 
 gem 'puma'
 
