@@ -1,7 +1,7 @@
 # http://emberjs.com/guides/models/#toc_store
 # http://emberjs.com/guides/models/pushing-records-into-the-store/
 
-EmTasks.Store = DS.Store.extend({
+EmTasks.ApplicationStore = DS.Store.extend({
 
 })
 
