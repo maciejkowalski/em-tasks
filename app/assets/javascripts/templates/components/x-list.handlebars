@@ -1,0 +1,19 @@
+<div class="col-md-8">
+<h3>
+    {{#if isEditingList}}
+        {{edit-input class="form-control" value=list.name focus-out="acceptChanges" insert-newline="acceptChanges"}}
+    {{else}}
+        <div {{action 'editList' on='doubleClick'}}>
+            {{list.name}}
+        </div>
+    {{/if}}
+
+</h3>
+</div>
+
+<div class='col-md-4 down13p'>
+    <button class="btn btn-danger btn-small pull-right" {{action "destroyList" list.id}} type="button">
+        <span class="glyphicon glyphicon-ban-circle"></span>
+    </button>
+</div>
+

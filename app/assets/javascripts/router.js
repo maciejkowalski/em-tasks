@@ -13,6 +13,15 @@ EmTasks.Router.map(function(){
 EmTasks.ListsRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('list');
+  },
+
+  actions: {
+      addList: function(param) {
+          this.store.createRecord('list', {
+              name: $("#list_name").val()
+          }).save();
+          $("#list_name").val('');
+      }
   }
 });
 
@@ -31,7 +40,6 @@ EmTasks.ProfileRoute = Em.Route.extend({
     var navbarView = EmTasks.NavbarView.create();
     console.log('view', navbarView);
     navbarView.replaceIn("#navbar_user");
-    this._super
-
-  },
+    this._super;
+  }
 });

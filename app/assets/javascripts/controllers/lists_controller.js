@@ -1,18 +1,5 @@
 EmTasks.ListsController = Em.ArrayController.extend({
-  addList: function() {
-    this.store.createRecord('list', {
-      name: this.get('newListName')
-    }).save();
-    return this.set('newListName', '');
-  },
 
-  destroyList: function(id) {
-    if (confirm("Are you sure?")) {
-      this.get('store').find('list', id).then( function(record) {
-        record.destroyRecord();
-      });
-    }
-  },
 });
 
 EmTasks.ListController = Em.ObjectController.extend({
@@ -60,7 +47,7 @@ EmTasks.ListController = Em.ObjectController.extend({
     }
   },
 
-  isEditingList: false,
+  isEditingList: false
 });
 
 EmTasks.TaskController = Em.ObjectController.extend({
@@ -88,5 +75,5 @@ EmTasks.TaskController = Em.ObjectController.extend({
     }
   },
 
-  isEditingTask: false,
+  isEditingTask: false
 });
