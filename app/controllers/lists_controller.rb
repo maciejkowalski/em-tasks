@@ -14,7 +14,9 @@ class ListsController < ApplicationController
   end
 
   def update
-    respond_with List.update(params[:id], list_params)
+    @list = List.find(params[:id])
+    @list.update_attributes(list_params)
+    respond_with @list
   end
 
   def destroy
