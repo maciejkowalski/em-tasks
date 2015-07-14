@@ -3,16 +3,16 @@
 <form class="form-horizontal" role="form">
 
   <div class="form-group">
-    <label class="col-sm-2 control-label">First name</label>
+    <label class="col-sm-2 control-label">Imię</label>
     <div class="col-sm-4">
-      {{view Ember.TextField valueBinding='model.firstName' placeholder="First name" class='form-control'}}
+      {{view Ember.TextField valueBinding='model.firstName' placeholder="Imię" class='form-control'}}
     </div>
   </div>
 
   <div class="form-group">
-    <label class="col-sm-2 control-label">Last name</label>
+    <label class="col-sm-2 control-label">Nazwisko</label>
     <div class="col-sm-4">
-      {{view Ember.TextField valueBinding='model.lastName' placeholder="Last name" class='form-control'}}
+      {{view Ember.TextField valueBinding='model.lastName' placeholder="Nazwisko" class='form-control'}}
     </div>
   </div>
 
@@ -45,14 +45,14 @@
   <div class="form-group">
     <label for="password" class="col-sm-2 control-label">Nowe hasło</label>
     <div class="col-sm-4">
-      {{view Ember.TextField type='password' valueBinding='model.password' placeholder="Password" class='form-control'}}
+      {{view Ember.TextField type='password' valueBinding='model.password' placeholder="Nowe hasło" class='form-control'}}
     </div>
   </div>
 
   <div class="form-group">
     <label for="password_confirmation" class="col-sm-2 control-label">Powtórz nowe hasło</label>
     <div class="col-sm-4">
-      {{view Ember.TextField type='password' valueBinding='model.passwordConfirmation' placeholder="Password confirmation" class='form-control'}}
+      {{view Ember.TextField type='password' valueBinding='model.passwordConfirmation' placeholder="Powtórz nowe hasło" class='form-control'}}
     </div>
   </div>
 

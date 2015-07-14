@@ -5,9 +5,9 @@
   <div class='col-md-6'>
     <form class='form-inline'>
       <div class='form-group'>
-        {{input type='text' value=name id='list_name' class='form-control input-lg' placeholder='Add new List'}}
+        {{input type='text' value=name id='list_name' class='form-control input-lg' placeholder='Dodaj Listę'}}
       </div>
-      <button type='submit' class='btn btn-default btn-lg'>Create List</button>
+      <button type='submit' class='btn btn-default btn-lg'>Dodaj Listę</button>
     </form>
   </div>
 
@@ -18,13 +18,13 @@
   <div class="row">
     {{#each model as |list|}}
       <div class="col-md-4">
-        {{x-list list=list}}
+          {{x-list list=list}}
 
           <form class='form-inline padding7p'>
               <div class='form-group'>
                   {{input type='text' value=newTaskName class='form-control' placeholder='Nowy task'}}
               </div>
-              <button type='submit' class='btn btn-default' {{action 'addTask'}}>Add Task</button>
+              <button type='submit' class='btn btn-default' {{action 'addTask'}}>Dodaj zadanie</button>
           </form>
 
           {{#each task in list.tasks itemController='task'}}
