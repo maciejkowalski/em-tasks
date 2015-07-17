@@ -1,0 +1,19 @@
+<div class="col-md-10">
+    <div class='col-md-10 padding7p font18p'>
+
+        {{#if task.isEditingTask}}
+            {{edit-input class="form-control" value=task.name focus-out="acceptChanges" insert-newline="acceptChanges"}}
+        {{else}}
+            <div {{action 'editTask' on='doubleClick'}}>
+                {{task.name}}
+            </div>
+        {{/if}}
+    </div>
+
+    <div class='col-md-2'>
+        <button class="btn btn-danger btn-xs pull-right" {{action 'destroyTask' task.id}} type="button">
+            <span class="glyphicon glyphicon-ban-circle"></span>
+        </button>
+    </div>
+
+</div>
