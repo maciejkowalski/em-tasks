@@ -1,6 +1,11 @@
 <div class="col-md-10">
     <div class='col-md-10 padding7p font18p'>
 
+        {{#link-to 'task.edit' task}}
+            {{task.name}}
+        {{/link-to}}
+
+        <!--
         {{#if task.isEditingTask}}
             {{edit-input class="form-control" value=task.name focus-out="acceptChanges" insert-newline="acceptChanges"}}
         {{else}}
@@ -8,6 +13,7 @@
                 {{task.name}}
             </div>
         {{/if}}
+        -->
     </div>
 
     <div class='col-md-2'>

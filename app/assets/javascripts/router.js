@@ -8,6 +8,20 @@ EmTasks.Router.map(function(){
   this.route('profile', {
     path: '/profile'
   });
+
+  this.resource("task", {path: "/task/:task_id"}, function () {
+      this.route('edit', {path: "edit"});
+  });
+});
+
+EmTasks.TaskRoute = Ember.Route.extend({
+    model: function (params) {
+//        var url = this.get('router.url');
+//        var id = url.split("/")[2]
+        //resp = Ember.$.getJSON("/tasks/" + id)
+        //console.log("resp:", resp);
+        return this.store.find("task", params.task_id);
+    }
 });
 
 EmTasks.ListsRoute = Ember.Route.extend({
