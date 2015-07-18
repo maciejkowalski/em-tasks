@@ -39,7 +39,7 @@ EmTasks.ListsRoute = Ember.Route.extend({
   }
 });
 
-EmTasks.ProfileRoute = Em.Route.extend({
+EmTasks.ProfileRoute = Ember.Route.extend({
   model: function() {
     self = this;
     Ember.$.getJSON('/users/user').then( function(response) {

@@ -1,4 +1,4 @@
-EmTasks.ProfileController = Em.ObjectController.extend({
+EmTasks.ProfileController = Ember.ObjectController.extend({
   content: null,
   currentUser: null,
 

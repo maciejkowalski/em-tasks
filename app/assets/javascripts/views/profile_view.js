@@ -1,3 +1,3 @@
-EmTasks.ProfileView = Em.View.extend({
+EmTasks.ProfileView = Ember.View.extend({
   templateName: 'profile'
 });
