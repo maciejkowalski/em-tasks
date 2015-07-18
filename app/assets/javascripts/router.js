@@ -39,6 +39,7 @@ EmTasks.ListsRoute = Ember.Route.extend({
   }
 });
 
+// TODO: fix navbar-view
 EmTasks.ProfileRoute = Ember.Route.extend({
   model: function() {
     self = this;
@@ -51,9 +52,10 @@ EmTasks.ProfileRoute = Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
-    var navbarView = EmTasks.NavbarView.create();
-    console.log('view', navbarView);
-    navbarView.replaceIn("#navbar_user");
+      console.log("ProfileRoute setupController this", this);
+//    var navbarView = EmTasks.NavbarView.create();
+//    console.log('view', navbarView);
+//    navbarView.replaceIn("#navbar_user");
     this._super;
   }
 });
