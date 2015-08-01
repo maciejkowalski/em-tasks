@@ -26,11 +26,11 @@ EmTasks.XTaskGeneralComponent = Ember.Component.extend({
             var task = this.task;
 
             var comment = store.createRecord('comment', {
-                name: this.get('newTaskName'),
+                content: task.get("newComment"),
                 task: task
             }).save();
-            console.log('created task', task);
-            return this.set('newTaskName', '');
+
+            task.set('newComment', '');
         }
 
     },
