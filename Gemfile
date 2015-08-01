@@ -41,6 +41,8 @@ gem 'puma'
 gem 'devise'
 gem 'font-awesome-rails'
 
+gem 'gon'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
