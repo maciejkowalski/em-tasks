@@ -1,0 +1,27 @@
+<div class='col-md-8'>
+    <h3>
+        <i class="fa fa-bars"></i> Nazwa:
+        {{#if isEditingName}}
+            {{edit-input class="form-control" value=task.name focus-out="acceptNameChanges" insert-newline="acceptNameChanges"}}
+        {{else}}
+            <br />
+            <a {{action 'editTaskName' on='doubleClick'}}>
+                {{task.name}}
+            </a>
+        {{/if}}
+
+    </h3>
+    <hr />
+
+    <h3>
+
+        {{#if isEditingDescription}}
+            {{edit-text class="form-control" value=task.description focus-out="acceptDescriptionChanges" }}
+        {{else}}
+            <pre style='white-space: pre-line;' {{action 'editTaskDescription' on='doubleClick'}}>
+                {{task.description}}
+            </pre>
+        {{/if}}
+
+    </h3>
+</div>

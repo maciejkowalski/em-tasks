@@ -26,10 +26,21 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="general">...</div>
-            <div role="tabpanel" class="tab-pane" id="attachments">...</div>
-            <div role="tabpanel" class="tab-pane" id="duedate">...</div>
-            <div role="tabpanel" class="tab-pane" id="setlist">...</div>
+            <div role="tabpanel" class="tab-pane active" id="general">
+                {{x-task-general task=model}}
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="attachments">
+                ...
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="duedate">
+                ...
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="setlist">
+                ...
+            </div>
         </div>
 
     </div>
