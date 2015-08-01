@@ -46,3 +46,16 @@
     </div>
 
 </div>
+
+<script type='text/javascript'>
+    $(document).on('click', ".nav-tabs", function(e) {
+        console.log("click e", e);
+        $a = $(e.target);
+        console.log("$a", $a);
+        ariaControls = $a.attr("aria-controls");
+        $(".tab-content .active").removeClass("active")
+
+        $("#" + ariaControls).addClass("active");
+
+    });
+</script>
