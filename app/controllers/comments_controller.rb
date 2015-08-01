@@ -6,12 +6,13 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comment = Comment.find(params[:id])
+    respond_with Comment.find(params[:id])
   end
 
   def create
-    @comment = Comment.create(comment_params)
+    respond_with Comment.create(comment_params)
   end
+
 
   def update
     respond_with Comment.update(params[:id], comment_params)
