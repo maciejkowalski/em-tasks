@@ -27,7 +27,8 @@ EmTasks.XTaskGeneralComponent = Ember.Component.extend({
 
             var comment = store.createRecord('comment', {
                 content: task.get("newComment"),
-                task: task
+                task: task,
+                user: window.currentUser
             }).save();
 
             task.set('newComment', '');
