@@ -16,6 +16,8 @@ EmTasks.Router.map(function(){
 
 EmTasks.TaskRoute = Ember.Route.extend({
     model: function (params) {
+
+        window.currentUser = this.store.find("user", window.gon.current_user.user.id);
 //        var url = this.get('router.url');
 //        var id = url.split("/")[2]
         //resp = Ember.$.getJSON("/tasks/" + id)
