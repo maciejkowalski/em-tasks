@@ -41,3 +41,21 @@
     </h3>
 </div>
 
+
+
+{{#each task.comments as |comment|}}
+
+    <div class='col-md-8'>
+        <div>
+            <img {{bind-attr src=comment.user_avatar}} height='25' width='25' style='margin-right: 5px'>
+            {{comment.user_name}} ({{comment.user_email}}) | {{comment.created_at}}
+        </div>
+
+        <div style="margin-top: 10px; margin-left: 10px; margin-bottom: 15px;">
+            <p>
+                {{comment.content}}
+            </p>
+        </div>
+    </div>
+
+{{/each}}
