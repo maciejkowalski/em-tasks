@@ -22,16 +22,24 @@ EmTasks.XTaskGeneralComponent = Ember.Component.extend({
         },
 
         addComment: function() {
+            console.log("addComment window.gon.current_user.user.id", window.gon.current_user.user.id);
             var store = this.get("targetObject.store");
             var task = this.task;
 
-            var comment = store.createRecord('comment', {
-                content: task.get("newComment"),
-                task: task,
-                user: window.currentUser
-            }).save();
+            var user = store.find("user", window.gon.current_user.user.id).then(function(user) {
+                console.log("INSIDE!")
 
-            task.set('newComment', '');
+                var comment = store.createRecord('comment', {
+                    content: task.get("newComment"),
+                    task: task,
+                    user: user
+                }).save();
+
+                task.set('newComment', '');
+
+            });
+
+
         }
 
     },
