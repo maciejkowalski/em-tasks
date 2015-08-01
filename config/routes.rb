@@ -1,6 +1,7 @@
 EmTasks::Application.routes.draw do
   resources :lists, defaults: {format: "json"}
   resources :tasks, defaults: {format: "json"}
+  resources :comments, defaults: {format: "json"}
 
   authenticated :user do
     root to: 'application#index', as: :user_home
