@@ -7,5 +7,6 @@ EmTasks.User = DS.Model.extend({
   avatar: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
+  comments: DS.hasMany("Comment")
 });
 
