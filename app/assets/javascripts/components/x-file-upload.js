@@ -1,8 +1,6 @@
 EmTasks.XFileUploadComponent = Ember.Component.extend({
     actions: {
-        destroyAttachment: function(id) { // please confirm if it is working.
-            console.log("Destroylist ID", id);
-
+        destroyAttachment: function(id) {
             var store = this.get("targetObject.store");
 
             if (confirm("Are you sure?")) {
@@ -21,23 +19,18 @@ EmTasks.XFileUploadComponent = Ember.Component.extend({
             paramName: 'file',
             autoUpload: true,
             add: function (e, data) {
-                console.log("add: e, data", e, data);
+                //console.log("add: e, data", e, data);
                 data.submit();
             },
             submit: function (e, data) {
-
-                console.log("jquery submit this, self", $(this), self, self.task);
-//                data.formData = {id: 123, title: 'abc123'};
-//                data.jqXHR = this.fileupload('send', data);
-                //return false;
+                //console.log("jquery submit this, self", $(this), self, self.task);
             },
             done: function (e, data) {
                 var store = self.get("targetObject.store");
-                console.log('success!', e, data);
                 var attachment = data.result.attachment;
+                attachment.task = self.task;
 
-                res = store.push("attachment", attachment);
-                window.attachment = res;
+                store.push("attachment", attachment);
                 self.sendAction('saveComplete');
             },
             fail: function (e, data) {
