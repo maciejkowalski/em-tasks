@@ -5,5 +5,6 @@ EmTasks.Task = DS.Model.extend({
   description: DS.attr("string"),
   list: DS.belongsTo('list'),
   comments: DS.hasMany("Comment"),
-  attachments: DS.hasMany("Attachment")
+  attachments: DS.hasMany("Attachment"),
+  due_date: DS.attr("string")
 });
