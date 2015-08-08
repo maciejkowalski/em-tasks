@@ -12,7 +12,9 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = Attachment.new(attachment_params)
     @attachment.attachment = params[:file]
+    @attachment.user = current_user
     @attachment.save!
+    respond_with @attachment
   end
 
   def update
