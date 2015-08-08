@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.fileupload
+//= require moment
 //= require bootstrap
+//= require bootstrap-datetimepicker
 //= require handlebars
 //= require ember
 //= require ember-data
