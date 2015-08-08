@@ -1,0 +1,39 @@
+<span class="btn btn-success fileinput-button">
+    <form>
+      <i class="glyphicon glyphicon-plus"></i>
+      <span>Select files...</span>
+
+      <!-- The file input field used as target for the file upload widget -->
+      <input id="fileupload" class='file-uploader' type="file" name="files[]" multiple>
+
+      <input name="task_id" type='hidden' value='{{task.id}}'>
+    </form>
+</span>
+
+<br/>
+
+<div class='col-md-8'>
+    <h4><i class="fa fa-file fa-lg"></i> Załączniki</h4>
+</div>
+
+{{#each task.attachments as |attachment|}}
+    <div class="col-md-8">
+        <div class='col-md-8'>
+            {{attachment.file_name}}
+        </div>
+
+        <a href='{{attachment.url}}' target='_blank'>
+            <i class="fa fa-download"></i> Ściągnij
+        </a>
+        &nbsp;
+
+        <a {{action 'destroyAttachment' attachment.id }} class='clickable'>
+            <i class="fa fa-times"></i>Usuń
+        </a>
+
+    </div>
+{{/each}}
+
+<div class='col-md-12'>
+    <hr />
+</div>
