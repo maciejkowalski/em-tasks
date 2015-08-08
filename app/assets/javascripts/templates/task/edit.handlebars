@@ -50,9 +50,9 @@
 <script type='text/javascript'>
     $(document).on('click', ".nav-tabs", function(e) {
 
-        $a = $(e.target);
+        var $a = $(e.target);
 
-        ariaControls = $a.attr("aria-controls");
+        var ariaControls = $a.attr("aria-controls");
         $(".tab-content .active").removeClass("active");
 
         $("#" + ariaControls).addClass("active");
