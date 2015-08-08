@@ -39,7 +39,23 @@
             </div>
 
             <div role="tabpanel" class="tab-pane" id="setlist">
-                ...
+
+
+                <div class='col-md-8'>
+                    <p>Przenieś zadanie: </p>
+
+                    <select {{action 'changeList' on='change'}} class='form-control js-select-form'>
+                        <option value=""> -- wybierz nowa liste -- </option>
+                        {{#each lists as |list|}}
+                            <option value='{{list.id}}'>
+                                {{list.name}}
+                            </option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class='col-md-12'>
+                    <hr />
+                </div>
             </div>
         </div>
 
