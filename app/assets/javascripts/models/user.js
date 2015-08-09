@@ -3,10 +3,10 @@
 EmTasks.User = DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr("string"),
-  passwordConfirmation: DS.attr("string"),
+  password_confirmation: DS.attr("string"),
   avatar: DS.attr('string'),
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
+  first_name: DS.attr('string'),
+  last_name: DS.attr('string'),
   comments: DS.hasMany("Comment")
 });
 
