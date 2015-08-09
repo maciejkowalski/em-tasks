@@ -1,3 +1,4 @@
 EmTasks.NavbarView = Ember.View.extend({
-  templateName: 'navbar',
-})
+  templateName: 'navbar'
+  // model is from ApplictionRoute - user
+});
