@@ -1,19 +1,20 @@
-EmTasks.ProfileController = Ember.ObjectController.extend({
+EmTasks.ProfileController = Ember.Controller.extend({
   content: null,
   currentUser: null,
+  self: null,
 
-  init: function() {
+  init: function () {
+    var user = window.gon.current_user.user;
     self = this;
 
-    Ember.$.getJSON('/users/user').then( function(response) {
-      self.store.find('user', response.user.id).then( function(record) {
+    self.store.find('user', user.id).then(function (record) {
         self.set('model', record);
-      });
     });
   },
 
-  updateProfile: function() {
-    var model = self.get('model');
-    model.save();
+  actions: {
+      updateProfile: function() {
+          this.model.save();
+      }
   }
 });
