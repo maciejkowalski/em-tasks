@@ -4,8 +4,14 @@ EmTasks::Application.routes.draw do
   resources :comments, defaults: {format: "json"}
   resources :attachments
 
+
+
   authenticated :user do
     root to: 'application#index', as: :user_home
+  end
+
+  devise_scope :user do
+    get 'users/sign_out' => 'devise/sessions#destroy'
   end
 
   devise_for :users, controllers: {registrations: 'registrations'}
