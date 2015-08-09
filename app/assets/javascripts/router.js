@@ -14,10 +14,30 @@ EmTasks.Router.map(function(){
   });
 });
 
+EmTasks.ApplicationRoute = Ember.Route.extend({
+    model: function () {
+        console.log('ApplicationRoute!');
+        var user = window.gon.current_user.user;
+        window.currentUser = this.store.find('user', user.id);
+
+        return window.currentUser;
+    },
+
+
+    setupController: function(controller, model) {
+        console.log("ApplicationRoute setupController this", this);
+        this._super(controller, model);
+
+//    var navbarView = EmTasks.NavbarView.create();
+//    console.log('view', navbarView);
+//    navbarView.replaceIn("#navbar_user");
+    }
+});
+
 EmTasks.TaskRoute = Ember.Route.extend({
     model: function (params) {
+        console.log('TaskRoute');
 
-        window.currentUser = this.store.find("user", window.gon.current_user.user.id);
 //        var url = this.get('router.url');
 //        var id = url.split("/")[2]
         //resp = Ember.$.getJSON("/tasks/" + id)
@@ -28,6 +48,7 @@ EmTasks.TaskRoute = Ember.Route.extend({
 
 EmTasks.ListsRoute = Ember.Route.extend({
   model: function() {
+      console.log('ListsRoute');
     return this.store.find('list');
   },
 
@@ -44,20 +65,7 @@ EmTasks.ListsRoute = Ember.Route.extend({
 // TODO: fix navbar-view
 EmTasks.ProfileRoute = Ember.Route.extend({
   model: function() {
-    self = this;
-    Ember.$.getJSON('/users/user').then( function(response) {
-      self.store.find('user', response.user.id).then( function(record) {
-        return record;
-        // self.set('model', record);
-      });
-    });
-  },
-
-  setupController: function(controller, model) {
-      console.log("ProfileRoute setupController this", this);
-//    var navbarView = EmTasks.NavbarView.create();
-//    console.log('view', navbarView);
-//    navbarView.replaceIn("#navbar_user");
-    this._super;
+      console.log('ProfileRoute');
+      return window.currentUser;
   }
 });
