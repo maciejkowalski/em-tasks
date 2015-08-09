@@ -20,7 +20,7 @@ EmTasks.XListComponent = Ember.Component.extend({
         },
 
         destroyList: function(id) { // please confirm if it is working.
-            if (confirm("Are you sure?")) {
+            if (confirm("Czy jesteś pewien?")) {
                 this.list.destroyRecord();
             }
         }

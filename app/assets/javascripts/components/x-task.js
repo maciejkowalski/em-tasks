@@ -15,7 +15,7 @@ EmTasks.XTaskComponent = Ember.Component.extend({
         },
 
         removeTask: function() {
-            if (confirm("Are you sure?")) {
+            if (confirm("Czy jesteś pewien?")) {
                 this.task.destroyRecord();
             }
         }

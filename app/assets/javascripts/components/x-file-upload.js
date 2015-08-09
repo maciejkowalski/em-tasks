@@ -3,7 +3,7 @@ EmTasks.XFileUploadComponent = Ember.Component.extend({
         destroyAttachment: function(id) {
             var store = this.get("targetObject.store");
 
-            if (confirm("Are you sure?")) {
+            if (confirm("Czy jesteś pewien?")) {
                 store.find('attachment', id).then(function (attachment) {
                     attachment.destroyRecord()
                 });
