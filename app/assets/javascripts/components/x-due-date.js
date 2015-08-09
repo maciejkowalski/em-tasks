@@ -12,12 +12,13 @@ EmTasks.XDueDateComponent = Ember.Component.extend({
     },
     didInsertElement: function() {
         var self = this;
+        var dueDate = self.task.get('due_date');
 
         $('.datetimepicker').datetimepicker({
             locale: 'pl',
             sideBySide: true,
             calendarWeeks: true,
-            defaultDate: self.task.due_date && moment(self.task.due_date).utc()
+            defaultDate: dueDate && moment(dueDate)
         });
 
         $(document).ready(function() {
